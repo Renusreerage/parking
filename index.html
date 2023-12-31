@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(yellow.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #container{
+            border: 2px solid black;
+            margin: auto;
+            width: 60%;
+            height: 688px;
+            display: flex;
+            justify-content: center; 
+            flex-direction: column;
+            align-items: center;
+            color: navy;
+            /* gap: -40px; */
+        }
+        #child1{
+            height: 50px;
+            width: 50%;
+            background-color:papayawhip; 
+            color: navy;
+        } 
+        #M1{
+            height:35px; 
+            width:40%; 
+            background-color: papayawhip; 
+            text-align: center; 
+            font-size: 20px;
+        }
+        .child{
+            color: navy;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+            <img src="car.jpg" alt="bigbazar" width="130px" height="300px" style="border-radius: 50%;">
+            <h3 style="color:navy;">BIGBAZAAR VEHICLE PARKING SERVICE</h3>
+            <div class="child">
+                <h4>Parking available 24/7</h4>
+                <h4>Two Wheeler:   &#8377;20/hour</h4>
+                <h4>Four Wheeler:   &#8377;60/hour</h4>
+                <h4>Heavy Vehicle: &#8377;100/hour</h4>
+            </div>
+            <h3>Select Vehicle Type:</h3>
+            <select name="text" id="child1">
+                <option value="two Wheeler">Two Wheeler</option>
+                <option value="four Wheeler">Four Wheeler</option>
+                <option value="Heavy Vehicle">Heavy Vehicle</option>
+            </select>
+            <h3>No. of Hours:</h3>
+            <input type="text" id="M1">
+            <hr>
+            <button type="button" style="height: 40px; width: 35%; background-color: papayawhip; color: navy;" onclick="display()">Total cost</button>
+            <h2 style="height: 40px; width: 20%; border: 2px solid black; text-align: center;" id="M2"></h2>
+            <h3 style="text-align: center; font-style: italic;">Thank you!!!</h3>
+    </div>
+</body>
+<script>
+    function display(){
+        let S2=document.querySelector("#M1").value
+        let S1=document.querySelector("#child1")
+        let S3=document.querySelector("#M2")
+        if (S1.value==="two Wheeler"){
+            S3.innerHTML=S2*20;
+        }else if (S1.value==="four Wheeler"){
+            S3.innerHTML=S2*60;
+        }else if (S1.value==="Heavy Vehicle"){
+            S3.innerHTML=S2*100;
+        }
+
+    }
+</script>
+</html>
